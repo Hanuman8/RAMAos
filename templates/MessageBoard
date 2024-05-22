@@ -1,0 +1,39 @@
+// Message Board Template
+
+class Message
+	string Content
+
+background "#FFC94A"
+column
+
+div
+text "Message Board"
+color "#453F78"
+fontSize "5vh"
+fontWeight "bold"
+margin "1vh 4vw"
+
+input Text
+placeholder "Write here and press return"
+color "#C08B5C"
+fontSize "2.5vh"
+padding "1vh 4vw"
+width "calc(100% - 8vw)"
+
+key "Enter"
+	new Message MyMessage
+	write read Text MyMessage.Content
+	clear Text
+
+query Message 9 MyMessage
+	div
+	color "#795458"
+	fontSize "3vh"
+	margin "1vh 5vw"
+	span
+	text sum index 1
+	span
+	text ". "
+	span
+	color "#000"
+	text MyMessage.Content
